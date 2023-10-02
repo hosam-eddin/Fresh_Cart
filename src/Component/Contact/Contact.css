@@ -1,0 +1,27 @@
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border: 0;
+  border-bottom: 1px solid;
+  border-color: rgba(128, 128, 128, 0.219);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+.form-control {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border: 0;
+  border-bottom: 1px solid;
+  border-color: rgba(128, 128, 128, 0.219);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+.btn:hover {
+    color: #1abc9c;
+    background-color:  #1abc9c;
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: #1abc9c;
+    background-color:  #1abc9c;
+    
+}
