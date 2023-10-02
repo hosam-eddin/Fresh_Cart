@@ -7,8 +7,12 @@ import MainSlider from "../MainSlider/MainSlider";
 export default function Home() {
   return (
     <>
-      <MainSlider />
-      <CategorySlider />
+      <div className="MainSlider">
+        <MainSlider />
+      </div>
+      <div className="CategorySlider ">
+        <CategorySlider />
+      </div>
       <FearturedProducts />
     </>
   );

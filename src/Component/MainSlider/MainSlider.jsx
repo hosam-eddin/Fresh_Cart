@@ -20,20 +20,20 @@ export default function MainSlider() {
   };
 
   return (
-    <>
+    <div >
       <div className="row gx-0 mb-5">
-        <div className="col-md-9">
+        <div className="col-md-9 col-sm-12">
           <Slider {...settings}>
             <img className="w-100" height={400} src={imgS1} alt="" />
             <img className="w-100" src={imgS2} height={400} alt="" />
             <img className="w-100" src={imgS3} alt="" height={400} />
           </Slider>
         </div>
-        <div className="col-md-3" >
+        <div className="col-md-3 col-sm-12" >
           <img className="w-100" src={blog2} alt="" height={200} />
           <img className="w-100" src={blog1} height={200} alt="" />
         </div>
       </div>
-    </>
+    </div>
   );
 }

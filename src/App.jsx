@@ -2,7 +2,6 @@ import Layout from "./Component/Layout/Layout";
 import {
   RouterProvider,
   createBrowserRouter,
-  createHashRouter,
 } from "react-router-dom";
 import Home from "./Component/Home/Home";
 import Notfound from "./Component/NotFound/Notfound";

@@ -12,8 +12,6 @@ export default function Layout() {
     if (localStorage.getItem("userToken") !== null) {
       setUserToken(localStorage.getItem("userToken"));
     }
-
-    return () => {};
   }, []);
 
   return (

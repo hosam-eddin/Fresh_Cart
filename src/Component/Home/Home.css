@@ -1,0 +1,7 @@
+@media (max-width: 768px) {
+    /* Apply display: none to hide MainSlider and CategorySlider */
+    .MainSlider,
+    .CategorySlider {
+      display: none;
+    }
+  }

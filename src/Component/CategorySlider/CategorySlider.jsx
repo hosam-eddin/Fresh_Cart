@@ -24,7 +24,7 @@ export default function CategorySlider() {
   let { data } = useQuery("CategorySlider", displayCate);
   console.log(data?.data.data);
   return (
-    <>
+    <div >
       {data?.data.data ? (
         <Slider {...settings}>
           {data?.data.data.map((category) => (
@@ -40,6 +40,6 @@ export default function CategorySlider() {
       ) : (
         ""
       )}
-    </>
+    </div>
   );
 }
