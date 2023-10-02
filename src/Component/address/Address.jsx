@@ -1,9 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { useFormik } from "formik";
 import { CartContext } from "../CounterContext/CartContext";
+import axios from "axios";
 
 export default function Address() {
-  let { onlinePayment, id } = useContext(CartContext);
+  let userToken = localStorage.getItem("userToken");
+  let headers = {
+    token: userToken,
+  };
+  let { id } = useContext(CartContext);
 
   const initialValues = {
     details: "",
@@ -11,28 +16,31 @@ export default function Address() {
     city: "",
   };
 
-  async function handleAddressSubmit(values) {
-    console.log("Form Values:", values);
-    try {
-      let res = await onlinePayment(id, "http://localhost:3000", values);
-      console.log("Payment Response:", res);
-      if (res?.data?.session?.url) {
-        console.log("Payment URL:", res.data.session.url);
-        window.location.href = res.data.session.url;
-      } else {
-        console.error("Payment URL is undefined in the response.");
-        // Handle the error or show a message to the user.
+  console.log("Cart ID:", id);
+
+  function checkOut(id, value, url) {
+    return axios.post(
+      `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=${url} `,
+      { shippingAddress: value },
+      {
+        headers,
       }
-    } catch (error) {
-      console.error("Payment Error:", error);
-      // Handle the error or show a message to the user.
+    );
+  }
+  async function navigotor(value) {
+    let res = await checkOut(
+      id,
+      value,
+      window.location.href.split("/").slice(0, 3).join("/")
+    );
+    console.log(res.data);
+    if (res.data.status === "success") {
+      window.location.href = res.data.session.url;
     }
   }
-  
   const formik = useFormik({
     initialValues,
-    onSubmit: handleAddressSubmit
-    
+    onSubmit: navigotor,
   });
 
   return (

@@ -97,25 +97,7 @@ function updateProductQuantity(productId, count) {
     .catch((error) => error);
 }
 
-function onlinePayment(cartId, url, count) {
-  return axios
-    .post(
-      `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${url}`,
-      {
-        count,
-      },
-      {
-        headers,
-      }
-    )
-    .then((response) => {
-      if (response.status === 200) {
-        if (response.data?.session?.url) {
-          window.location.href = response.data.session.url;
-        }
-      } 
-    })
-}
+
 
 function clearCart() {
   return axios
@@ -157,7 +139,7 @@ export default function CartContextProvider(props) {
         setCartCount,
         setfavCount,
         favCount,
-        onlinePayment,
+
         id,
         setOwnerId,
         ownerId,

@@ -8,6 +8,7 @@ import { CartContext } from "../CounterContext/CartContext";
 export default function Navbar() {
   let { cartCount ,favCount } = useContext(CartContext);
 
+
   let { userToken, setUserToken } = useContext(UserContext);
   const [navbar, setNavbar] = useState(false);
 

@@ -28,11 +28,11 @@ export default function Cart() {
       console.log(data?.data.cartOwner);
       console.log('====================================');
       
+      localStorage.setItem('owner',data?.data.cartOwner)
       console.log(ownerId);
     }
   }
-  localStorage.setItem('owner',ownerId)
-
+  
   async function removeItem(id) {
     let { data } = await removeCartItem(id);
     setCartDetails(data);

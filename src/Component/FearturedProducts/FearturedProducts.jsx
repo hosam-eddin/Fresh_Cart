@@ -53,6 +53,9 @@ export default function DisplayProduct() {
       toast.error("This didn't work.");
     }
     console.log(response);
+    console.log('====================================');
+    console.log(window.location.href);
+    console.log('====================================');
   }
 
   async function addProductToFav(productId, index) {
