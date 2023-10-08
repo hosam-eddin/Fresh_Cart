@@ -61,3 +61,15 @@ a:hover {
 .px-10{
   padding-inline: 90px;
 }
+
+@media (max-width: 768px) {
+  .MainSlider,
+  .CategorySlider {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+.productSlides{
+    display: none;
+  }
+}

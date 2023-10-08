@@ -52,7 +52,7 @@ export default function ProductDetails() {
         <div className=" container py-3">
           <div className="row justify-content-center align-items-center">
             <div className="col-md-4">
-              <Slider {...settings}>
+              <Slider {...settings} className="MainSlider">
                 {data?.data.data.images.map((img) => (
                   <img
                     key={data?.data.data.id}
@@ -61,6 +61,15 @@ export default function ProductDetails() {
                     alt=""
                   ></img>
                 ))}
+              </Slider>
+
+              <Slider {...settings} className="productSlides">
+                  <img
+                    key={data?.data.data.id}
+                    className="w-100"
+                    src={data?.data.data.imageCover}
+                    alt=""
+                  ></img>
               </Slider>
             </div>
             <div className="col-md-8">
